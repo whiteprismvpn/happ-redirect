@@ -1,13 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Открыть в Happ</title>
-  <script>
-    window.location.href = "happ://routing/add/eyJEaXJlY3RJcCI6WyIxMC4wLjAuMFwvOCIsIjEwMC42NC4wLjBcLzEwIiwiMTcyLjE2LjAuMFwvMTIiLCIxOTIuMTY4LjAuMFwvMTYiLCIxNjkuMjU0LjAuMFwvMTYiLCIyMjQuMC4wLjBcLzQiLCIyNTUuMjU1LjI1NS4yNTUiLCJnZW9pcDpydSJdLCJVc2VDaHVua0ZpbGVzIjp0cnVlLCJEb21lc3RpY0ROU0lwIjoiOC44LjguOCIsIkJsb2NrSXAiOltdLCJOYW1lIjoiV2hpdGVQcmlzbVZQTiIsIkRvbWFpblN0cmF0ZWd5IjoiSVBJZk5vbk1hdGNoIiwiRmFrZURucyI6ZmFsc2UsIkJsb2NrU2l0ZXMiOltdLCJEb21lc3RpY0ROU0RvbWFpbiI6Imh0dHBzOlwvXC9kbnMuZ29vZ2xlXC9kbnMtcXVlcnkiLCJHZW9pcFVybCI6Imh0dHBzOlwvXC9naXRodWIuY29tXC9Mb3lhbHNvbGRpZXJcL3YycmF5LXJ1bGVzLWRhdFwvcmVsZWFzZXNcL2xhdGVzdFwvZG93bmxvYWRcL2dlb2lwLmRhdCIsIkxhc3RVcGRhdGVkIjoxNzgzMzczODMwLCJSZW1vdGVETlNEb21haW4iOiJodHRwczpcL1wvY2xvdWRmbGFyZS1kbnMuY29tXC9kbnMtcXVlcnkiLCJQcm94eUlwIjpbXSwiUm91dGVPcmRlciI6ImJsb2NrLWRpcmVjdC1wcm94eSIsIkRpcmVjdFNpdGVzIjpbXSwiUmVtb3RlRE5TVHlwZSI6IkRvVSIsIkdsb2JhbFByb3h5Ijp0cnVlLCJHZW9zaXRlVXJsIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL0xveWFsc29sZGllclwvdjJyYXktcnVsZXMtZGF0XC9yZWxlYXNlc1wvbGF0ZXN0XC9kb3dubG9hZFwvZ2Vvc2l0ZS5kYXQiLCJQcm94eVNpdGVzIjpbXSwiRG9tZXN0aWNETlNUeXBlIjoiRG9VIiwiRG5zSG9zdHMiOnt9LCJSZW1vdGVETlNJcCI6IjEuMS4xLjEifQ==";
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Импорт профиля Happ</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f1115;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 24px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    h1 { font-size: 20px; margin-bottom: 8px; }
+    p { color: #aaa; font-size: 15px; line-height: 1.5; max-width: 340px; }
+    a.button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 16px 32px;
+      background: #635bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .hint {
+      margin-top: 28px;
+      font-size: 13px;
+      color: #777;
+      max-width: 320px;
+    }
+  </style>
 </head>
 <body>
-  <p>Открываем Happ… Если приложение не открылось автоматически, <a href="happ://routing/add/eyJEaXJlY3RJcCI6WyIxMC4wLjAuMFwvOCIsIjEwMC42NC4wLjBcLzEwIiwiMTcyLjE2LjAuMFwvMTIiLCIxOTIuMTY4LjAuMFwvMTYiLCIxNjkuMjU0LjAuMFwvMTYiLCIyMjQuMC4wLjBcLzQiLCIyNTUuMjU1LjI1NS4yNTUiLCJnZW9pcDpydSJdLCJVc2VDaHVua0ZpbGVzIjp0cnVlLCJEb21lc3RpY0ROU0lwIjoiOC44LjguOCIsIkJsb2NrSXAiOltdLCJOYW1lIjoiV2hpdGVQcmlzbVZQTiIsIkRvbWFpblN0cmF0ZWd5IjoiSVBJZk5vbk1hdGNoIiwiRmFrZURucyI6ZmFsc2UsIkJsb2NrU2l0ZXMiOltdLCJEb21lc3RpY0ROU0RvbWFpbiI6Imh0dHBzOlwvXC9kbnMuZ29vZ2xlXC9kbnMtcXVlcnkiLCJHZW9pcFVybCI6Imh0dHBzOlwvXC9naXRodWIuY29tXC9Mb3lhbHNvbGRpZXJcL3YycmF5LXJ1bGVzLWRhdFwvcmVsZWFzZXNcL2xhdGVzdFwvZG93bmxvYWRcL2dlb2lwLmRhdCIsIkxhc3RVcGRhdGVkIjoxNzgzMzczODMwLCJSZW1vdGVETlNEb21haW4iOiJodHRwczpcL1wvY2xvdWRmbGFyZS1kbnMuY29tXC9kbnMtcXVlcnkiLCJQcm94eUlwIjpbXSwiUm91dGVPcmRlciI6ImJsb2NrLWRpcmVjdC1wcm94eSIsIkRpcmVjdFNpdGVzIjpbXSwiUmVtb3RlRE5TVHlwZSI6IkRvVSIsIkdsb2JhbFByb3h5Ijp0cnVlLCJHZW9zaXRlVXJsIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL0xveWFsc29sZGllclwvdjJyYXktcnVsZXMtZGF0XC9yZWxlYXNlc1wvbGF0ZXN0XC9kb3dubG9hZFwvZ2Vvc2l0ZS5kYXQiLCJQcm94eVNpdGVzIjpbXSwiRG9tZXN0aWNETlNUeXBlIjoiRG9VIiwiRG5zSG9zdHMiOnt9LCJSZW1vdGVETlNJcCI6IjEuMS4xLjEifQ==">нажмите сюда</a>.</p>
+  <h1>Импорт профиля маршрутизации</h1>
+  <p>Нажмите на кнопку ниже, чтобы открыть Happ и добавить готовый профиль «Россия напрямую».</p>
+
+  <a class="button" id="openBtn"
+     href="happ://routing/add/eyJEaXJlY3RJcCI6WyIxMC4wLjAuMFwvOCIsIjEwMC42NC4wLjBcLzEwIiwiMTcyLjE2LjAuMFwvMTIiLCIxOTIuMTY4LjAuMFwvMTYiLCIxNjkuMjU0LjAuMFwvMTYiLCIyMjQuMC4wLjBcLzQiLCIyNTUuMjU1LjI1NS4yNTUiLCJnZW9pcDpydSJdLCJVc2VDaHVua0ZpbGVzIjp0cnVlLCJEb21lc3RpY0ROU0lwIjoiOC44LjguOCIsIkJsb2NrSXAiOltdLCJOYW1lIjoiV2hpdGVQcmlzbVZQTiIsIkRvbWFpblN0cmF0ZWd5IjoiSVBJZk5vbk1hdGNoIiwiRmFrZURucyI6ZmFsc2UsIkJsb2NrU2l0ZXMiOltdLCJEb21lc3RpY0ROU0RvbWFpbiI6Imh0dHBzOlwvXC9kbnMuZ29vZ2xlXC9kbnMtcXVlcnkiLCJHZW9pcFVybCI6Imh0dHBzOlwvXC9naXRodWIuY29tXC9Mb3lhbHNvbGRpZXJcL3YycmF5LXJ1bGVzLWRhdFwvcmVsZWFzZXNcL2xhdGVzdFwvZG93bmxvYWRcL2dlb2lwLmRhdCIsIkxhc3RVcGRhdGVkIjoxNzgzMzczODMwLCJSZW1vdGVETlNEb21haW4iOiJodHRwczpcL1wvY2xvdWRmbGFyZS1kbnMuY29tXC9kbnMtcXVlcnkiLCJQcm94eUlwIjpbXSwiUm91dGVPcmRlciI6ImJsb2NrLWRpcmVjdC1wcm94eSIsIkRpcmVjdFNpdGVzIjpbXSwiUmVtb3RlRE5TVHlwZSI6IkRvVSIsIkdsb2JhbFByb3h5Ijp0cnVlLCJHZW9zaXRlVXJsIjoiaHR0cHM6XC9cL2dpdGh1Yi5jb21cL0xveWFsc29sZGllclwvdjJyYXktcnVsZXMtZGF0XC9yZWxlYXNlc1wvbGF0ZXN0XC9kb3dubG9hZFwvZ2Vvc2l0ZS5kYXQiLCJQcm94eVNpdGVzIjpbXSwiRG9tZXN0aWNETlNUeXBlIjoiRG9VIiwiRG5zSG9zdHMiOnt9LCJSZW1vdGVETlNJcCI6IjEuMS4xLjEifQ==">
+    Открыть в Happ
+  </a>
+
+  <p class="hint">
+    Если после нажатия ничего не произошло — нажмите «⋯» или значок браузера в правом верхнем углу и выберите «Открыть в Safari / Chrome», затем повторите нажатие на кнопку ещё раз уже там.
+  </p>
+
+  <script>
+    // Показываем подсказку про Safari через 2 секунды после нажатия,
+    // если приложение не открылось (страница осталась активной)
+    document.getElementById('openBtn').addEventListener('click', function() {
+      setTimeout(function() {
+        document.querySelector('.hint').style.color = '#ff9f43';
+        document.querySelector('.hint').style.fontWeight = '600';
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
